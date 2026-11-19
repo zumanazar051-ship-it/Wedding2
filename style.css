@@ -1,0 +1,275 @@
+-* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #fff 0%, transparent 50%),
+        linear-gradient(135deg, #f9eee9, #e8d5ca, #fff9f5);
+    font-family: Georgia, serif;
+    color: #85674f;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.main {
+    max-width: 800px;
+    margin: auto;
+    padding: 35px 18px;
+}
+
+.background-flowers {
+    font-size: 35px;
+    color: #c5a16b;
+    padding: 20px;
+    animation: float 4s infinite ease-in-out;
+}
+
+.subtitle {
+    color: #b29368;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin: 25px 0;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.scene {
+    width: 320px;
+    height: 260px;
+    margin: 70px auto 25px;
+    perspective: 1200px;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 190px;
+    margin: auto;
+    transform-style: preserve-3d;
+    background: #d6b9a5;
+    box-shadow: 0 25px 40px #a78b76;
+    border-radius: 5px;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #e6d1c1;
+    z-index: 1;
+}
+
+.paper {
+    position: absolute;
+    width: 88%;
+    height: 175px;
+    left: 6%;
+    top: 8px;
+    background: #fffdf8;
+    padding: 25px 5px;
+    z-index: 2;
+    transition: transform 1.5s ease;
+    box-shadow: 0 0 12px #c9b5a3;
+}
+
+.paper h1 {
+    color: #b38c59;
+    font-size: 29px;
+    margin: 15px;
+    letter-spacing: 3px;
+}
+
+.paper p {
+    font-size: 13px;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background: linear-gradient(145deg, #e9d4c5, #d4b39c);
+    clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 100%, 0 100%);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 115px solid #c9a88f;
+    transform-origin: top;
+    transition: transform 1s ease;
+    z-index: 6;
+}
+
+.seal {
+    position: absolute;
+    top: 85px;
+    left: 130px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d9b978, #a77d42);
+    color: white;
+    z-index: 7;
+    box-shadow: 0 3px 8px #9e7954;
+}
+
+.envelope.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open .paper {
+    transform: translateY(-165px);
+}
+
+.envelope.open .seal {
+    opacity: 0;
+}
+
+button {
+    border: 1px solid #b99a6c;
+    padding: 15px 50px;
+    border-radius: 40px;
+    color: white;
+    background: linear-gradient(135deg, #c5a16b, #947047);
+    font-size: 16px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #bda28c;
+    transition: 0.4s;
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #a88c70;
+}
+
+.invitation {
+    display: none;
+    max-width: 550px;
+    margin: 80px auto 40px;
+    padding: 45px 25px;
+    background: rgba(255, 253, 249, 0.96);
+    border: 2px solid #c5a16b;
+    outline: 1px solid #c5a16b;
+    outline-offset: 7px;
+    box-shadow: 0 20px 50px #b69d88;
+}
+
+.invitation.show {
+    display: block;
+    animation: reveal 1.5s ease;
+}
+
+.roses {
+    color: #c3a06e;
+    font-size: 35px;
+    margin: 20px;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #b18a55;
+    margin: 20px;
+}
+
+.invitation h1 {
+    font-size: 30px;
+    color: #a98555;
+    margin: 25px 0;
+}
+
+.invitation h2 {
+    color: #967455;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.invitation p {
+    font-size: 16px;
+    line-height: 2;
+    margin: 18px 0;
+}
+
+.gold-line {
+    width: 75%;
+    height: 1px;
+    margin: 30px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #c5a16b,
+        transparent
+    );
+}
+
+.bride {
+    letter-spacing: 5px;
+}
+
+.date h1 {
+    font-size: 75px;
+    margin: 5px;
+}
+
+.date h2 {
+    letter-spacing: 5px;
+}
+
+footer {
+    margin: 50px 0 20px;
+    color: #b18a55;
+    letter-spacing: 5px;
+    font-size: 11px;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@media(max-width: 400px) {
+    .scene {
+        transform: scale(.9);
+        transform-origin: top center;
+        margin-bottom: 0;
+    }
+
+    .invitation {
+        padding: 30px 15px;
+    }
+
+    .invitation h1 {
+        font-size: 25px;
+    }
+}
+.invitation.show {
+    display: block;
+}
